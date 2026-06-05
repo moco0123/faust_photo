@@ -87,6 +87,7 @@ body {
 .outro {
     height: 100vh;
     display: flex;
+    flex-direction: column; /* 要素を縦方向に並べる */
     justify-content: center;
     align-items: center;
 }
