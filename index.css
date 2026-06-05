@@ -1,0 +1,97 @@
+:root {
+    --bg-color: #0d0d0d;
+    --text-color: #f2f2f2;
+    --accent-color: #aaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "serif", "Hiragino Mincho ProN", "MS PMincho", serif;
+    overflow-x: hidden;
+    line-height: 1.8;
+}
+
+/* イントロ画面 */
+.vignette {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.intro-content h1 {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 20px;
+}
+
+.arrow {
+    margin-top: 30px;
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--text-color), transparent);
+    display: inline-block;
+}
+
+/* ストーリーセクション */
+.scene {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.media {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.media img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.caption {
+    max-width: 500px;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0 10px;
+}
+
+/* アニメーション用クラス */
+.reveal {
+    opacity: 0;
+    transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.fade-up {
+    transform: translateY(40px);
+}
+
+/* JavaScriptで付与される表示用クラス */
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.outro {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    opacity: 0.6;
+}
