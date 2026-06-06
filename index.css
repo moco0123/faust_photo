@@ -9,11 +9,16 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: "serif", "Hiragino Mincho ProN", serif;
     overflow-x: hidden;
+    width: 100%;
     line-height: 1.8;
 }
 
@@ -23,6 +28,23 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.arrow {
+    margin-top: 30px;
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+    transform: rotate(45deg);
+    display: inline-block;
+    animation: arrow-move 2s infinite;
+}
+
+@keyframes arrow-move {
+    0% { transform: translateY(0) rotate(45deg); opacity: 0.3; }
+    50% { transform: translateY(15px) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(0) rotate(45deg); opacity: 0.3; }
 }
 
 .scene {
@@ -48,9 +70,28 @@ body {
     display: block;
 }
 
+/* --- 背景切り替えスタイル --- */
+.scene-white {
+    background-color: var(--text-color); /* オフホワイト */
+    color: var(--bg-color);             /* 文字を黒に */
+}
+
+/* 黒から白へ変わる境界（シーン3に適用） */
+.scene-transition-to-white {
+    background: linear-gradient(to bottom, var(--bg-color), var(--text-color));
+    color: var(--bg-color);
+}
+
+/* 白から黒へ戻る境界（シーン7に適用） */
+.scene-transition-to-black {
+    background: linear-gradient(to bottom, var(--text-color), var(--bg-color));
+    color: var(--text-color);
+}
+
 .caption {
     margin-top: 20px;
     max-width: 500px;
+    width: 100%;
     text-align: center;
     font-size: 1.1rem;
 }
